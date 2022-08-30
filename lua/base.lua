@@ -28,6 +28,8 @@ vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.signcolumn = 'yes'
+vim.opt.errorbells = false
+vim.opt.updatetime = 50
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
