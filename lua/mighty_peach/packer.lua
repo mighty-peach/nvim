@@ -16,6 +16,10 @@ return require('packer').startup(function(use)
     run = ':TSUpdate'
   }
   use('tpope/vim-fugitive')
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = { "nvim-lua/plenary.nvim" },
+  }
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -39,4 +43,6 @@ return require('packer').startup(function(use)
       {'rafamadriz/friendly-snippets'},
     }
   }
+
+  use ('github/copilot.vim')
 end)

@@ -12,6 +12,8 @@ vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
+vim.opt.list = true
+vim.opt.listchars = { trail = '·' }
 
 vim.opt.title = true
 vim.opt.autoindent = true
@@ -25,7 +27,7 @@ vim.opt.laststatus = 2
 vim.opt.scrolloff = 10
 vim.opt.backupskip = { '/tmp/*', '/private/tmp/*' }
 vim.opt.inccommand = 'split'
-vim.opt.ignorecase = true 
+vim.opt.ignorecase = true
 vim.opt.wrap = false
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' }
