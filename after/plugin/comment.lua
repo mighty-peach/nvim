@@ -1,7 +1,7 @@
 require('Comment').setup({
   toggler = {
     ---Line-comment toggle keymap
-    line = 'gc',
+    line = 'gcc',
     ---Block-comment toggle keymap
     block = 'gC',
   },
