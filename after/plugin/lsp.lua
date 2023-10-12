@@ -2,39 +2,40 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
-})
-
--- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
+require('mason').setup({})
+require('mason-lspconfig').setup({
+   ensure_installed = {'tsserver', 'rust_analyzer'},
+   handlers = {
+      lsp.default_setup,
+      lua_ls = function()
+        local lua_opts = lsp.nvim_lua_ls()
+        require('lspconfig').lua_ls.setup(lua_opts)
+      end,
     }
 })
 
-
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-d>'] = cmp.mapping.scroll_docs(4),
-  ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
-})
+require('luasnip.loaders.from_vscode').lazy_load()
+local cmp_action = require('lsp-zero').cmp_action()
 
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    -- confirm completion item
+    ['<C-y>'] = cmp.mapping.confirm({select = false}),
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+
+    -- navigate between snippet placeholder
+    ['<C-d>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+
+    -- scroll documentation window
+    ['<C-u>'] = cmp.mapping.scroll_docs(-5),
+    ['<C-d>'] = cmp.mapping.scroll_docs(5),
+    ['<Tab>'] = nil,
+    ['<S-Tab>'] = nil
+  }),
 })
 
 lsp.set_preferences({
