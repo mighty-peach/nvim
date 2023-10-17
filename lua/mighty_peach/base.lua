@@ -1,5 +1,6 @@
 vim.cmd("autocmd!")
-vim.cmd[[colorscheme neosolarized]]
+vim.cmd[[colorscheme alabaster]]
+vim.opt.background = 'light'
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'

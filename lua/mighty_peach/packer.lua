@@ -7,9 +7,12 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  -- use {
+  --   'svrana/neosolarized.nvim',
+  --   requires = { 'tjdevries/colorbuddy.nvim' }
+  -- }
   use {
-    'svrana/neosolarized.nvim',
-    requires = { 'tjdevries/colorbuddy.nvim' }
+    'p00f/alabaster.nvim'
   }
   use {
     'nvim-treesitter/nvim-treesitter',

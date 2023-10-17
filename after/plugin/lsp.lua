@@ -21,7 +21,7 @@ local cmp_action = require('lsp-zero').cmp_action()
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
     -- confirm completion item
-    ['<C-y>'] = cmp.mapping.confirm({select = false}),
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
 
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
