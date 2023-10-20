@@ -11,9 +11,7 @@ return require('packer').startup(function(use)
   --   'svrana/neosolarized.nvim',
   --   requires = { 'tjdevries/colorbuddy.nvim' }
   -- }
-  use {
-    'p00f/alabaster.nvim'
-  }
+  use { "ellisonleao/gruvbox.nvim" }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
