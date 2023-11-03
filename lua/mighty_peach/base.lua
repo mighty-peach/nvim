@@ -1,6 +1,7 @@
 vim.cmd("autocmd!")
 vim.cmd[[colorscheme gruvbox]]
 vim.opt.background = 'dark'
+vim.opt.hidden = true
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
