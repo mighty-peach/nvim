@@ -39,6 +39,9 @@ vim.opt.number = true
 vim.opt.signcolumn = 'no'
 vim.opt.errorbells = false
 vim.opt.updatetime = 50
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldlevelstart = 99
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
