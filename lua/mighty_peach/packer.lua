@@ -2,25 +2,24 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+  use { "ellisonleao/gruvbox.nvim" }
 
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  -- use {
-  --   'svrana/neosolarized.nvim',
-  --   requires = { 'tjdevries/colorbuddy.nvim' }
-  -- }
-  use { "ellisonleao/gruvbox.nvim" }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+
   use('tpope/vim-fugitive')
+
   use {
-    'jose-elias-alvarez/null-ls.nvim',
+    'nvimtools/none-ls.nvim',
     requires = { "nvim-lua/plenary.nvim" },
   }
+
   use {
     'numToStr/Comment.nvim',
     config = function()
@@ -51,4 +50,5 @@ return require('packer').startup(function(use)
     }
   }
 
-  use ('github/copilot.vim') end)
+  use ('github/copilot.vim')
+end)
