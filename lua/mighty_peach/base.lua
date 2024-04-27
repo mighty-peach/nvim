@@ -1,5 +1,5 @@
 vim.cmd("autocmd!")
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd [[colorscheme gruvbox]]
 vim.opt.background = 'dark'
 vim.opt.hidden = true
 
@@ -45,3 +45,6 @@ vim.opt.foldlevelstart = 99
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
+
+-- Netrw
+vim.g.netrw_banner = 0

@@ -4,11 +4,16 @@ conform.setup({
   formatters_by_ft = {
     lua = { "stylua" },
     rust = { "rustfmt" },
-    javascript = { "prettier"  },
-  },
-  format_on_save = {
-    -- These options will be passed to conform.format()
-    timeout_ms = 100,
-    lsp_fallback = true,
-  },
+    javascript = { { "prettierd", "prettier" } },
+    javascriptreact = { { "prettierd", "prettier" } },
+    typescript = { { "prettierd", "prettier" } },
+    typescriptreact = { { "prettierd", "prettier" } },
+  }
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
 })
