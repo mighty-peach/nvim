@@ -52,5 +52,17 @@ return require('packer').startup(function(use)
     }
   }
 
+  use {
+    "shortcuts/no-neck-pain.nvim",
+    tag = "*",
+    config = function()
+      require("no-neck-pain").setup({
+        autocmds = {
+          enableOnVimEnter = true,
+        }
+      })
+    end
+  }
+
   use('github/copilot.vim')
 end)
