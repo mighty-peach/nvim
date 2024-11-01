@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+
   use 'wbthomason/packer.nvim'
   use { "ellisonleao/gruvbox.nvim" }
 
@@ -31,7 +32,7 @@ return require('packer').startup(function(use)
 
   use {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
+    branch = 'v4.x',
     requires = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' },
@@ -52,17 +53,18 @@ return require('packer').startup(function(use)
     }
   }
 
-  use {
-    "shortcuts/no-neck-pain.nvim",
-    tag = "*",
-    config = function()
-      require("no-neck-pain").setup({
-        autocmds = {
-          enableOnVimEnter = true,
-        }
-      })
-    end
-  }
+  -- use {
+  --   "shortcuts/no-neck-pain.nvim",
+  --   tag = "*",
+  --   config = function()
+  --     require("no-neck-pain").setup({
+  --       autocmds = {
+  --         enableOnVimEnter = true,
+  --         disableOnLastBuffer = false,
+  --       }
+  --     })
+  --   end
+  -- }
 
-  use('github/copilot.vim')
+  -- use('github/copilot.vim')
 end)
