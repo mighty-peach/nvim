@@ -15,13 +15,20 @@ lsp.extend_lspconfig({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-   ensure_installed = {'lua_ls', 'zls', 'ts_ls', 'rust_analyzer', 'tailwindcss'},
+   ensure_installed = {'lua_ls', 'elixirls', 'ts_ls', 'tailwindcss'},
    handlers = {
       lsp.default_setup,
       lua_ls = function()
         local lua_opts = lsp.nvim_lua_ls()
         require('lspconfig').lua_ls.setup(lua_opts)
       end,
+      elixirls = function()
+        require('lspconfig').elixirls.setup{
+          -- Unix
+          cmd = { "/opt/homebrew/Cellar/elixir-ls/0.24.1/libexec/language_server.sh" };
+          capabilities = require('cmp_nvim_lsp').default_capabilities(),
+        }
+      end
     }
 })
 

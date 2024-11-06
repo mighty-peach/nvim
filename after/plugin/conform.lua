@@ -2,8 +2,9 @@ local conform = require("conform")
 
 conform.setup({
   formatters_by_ft = {
-    lua = { "stylua" },
+    lua = { "lua-format" },
     rust = { "rustfmt" },
+
     javascript = {  "prettierd", "prettier", stop_after_first = true  },
     javascriptreact = {  "prettierd", "prettier", stop_after_first = true  },
     typescript = {  "prettierd", "prettier", stop_after_first = true  },

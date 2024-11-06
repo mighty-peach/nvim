@@ -13,9 +13,7 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-
   use('tpope/vim-fugitive')
-
   use({
     "stevearc/conform.nvim",
     config = function()
