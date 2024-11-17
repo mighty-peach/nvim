@@ -1,6 +1,8 @@
 vim.cmd("autocmd!")
-vim.cmd [[colorscheme gruvbox]]
-vim.opt.background = 'dark'
+vim.cmd("syntax off")
+vim.cmd [[colorscheme alabaster]]
+
+vim.opt.background = 'light'
 vim.opt.hidden = true
 
 vim.scriptencoding = 'utf-8'
