@@ -1,7 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = function(_, opts)
-    -- add tsx and treesitter
     vim.list_extend(opts.ensure_installed, {
       "tsx",
       "elixir",
@@ -12,6 +11,9 @@ return {
       "lua",
     })
 
+    opts.highlight = {
+      enable = true
+    }
     opts.auto_install = true
   end,
 }

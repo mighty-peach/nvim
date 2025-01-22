@@ -3,6 +3,7 @@
 -- Add any additional options here
 vim.g.ai_cmp = false
 vim.g.snacks_animate = false
+vim.g.root_spec = { "cwd" }
 
 local opt = vim.opt
 opt.signcolumn = "no"
