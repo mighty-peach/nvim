@@ -16,13 +16,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    { "p00f/alabaster.nvim" },
+    { "ellisonleao/gruvbox.nvim" },
     -- add LazyVim and import its plugins
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "alabaster",
+        colorscheme = "gruvbox",
       },
     },
     -- import/override with your plugins
@@ -37,7 +37,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "alabaster" } },
+  install = { colorscheme = { "gruvbox" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
