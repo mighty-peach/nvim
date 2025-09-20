@@ -16,14 +16,24 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    { "ellisonleao/gruvbox.nvim" },
+    -- { "ellisonleao/gruvbox.nvim" },
     -- add LazyVim and import its plugins
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      opts = {
-        colorscheme = "gruvbox",
-      },
+      -- opts = {
+      --   colorscheme = "black-metal",
+      -- },
+    },
+    {
+      "metalelf0/black-metal-theme-neovim",
+      config = function()
+        require("black-metal").setup({
+          theme = "venom",
+          -- optional configuration here
+        })
+        require("black-metal").load()
+      end,
     },
     -- import/override with your plugins
     { import = "plugins" },
@@ -37,7 +47,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "gruvbox" } },
+  install = { colorscheme = { "black-metal" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
