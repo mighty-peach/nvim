@@ -1,8 +1,17 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  keys = {
+    {
+      "<leader>fe",
+      function()
+        require("neo-tree.command").execute({ action = "focus", reveal = true })
+      end,
+      desc = "Explorer NeoTree (reveal current file)",
+    },
+  },
   opts = {
     window = {
-      position = "float"
+      position = "current"
     },
     filesystem = {
       filtered_items = {
@@ -13,14 +22,12 @@ return {
       },
       follow_current_file = {
         enabled = true,
-        leave_dirs_open = true
       },
-      hijack_netrw_behavior = "open_current"
+      hijack_netrw_behavior = "open_default"
     },
     buffers = {
       follow_current_file = {
         enabled = true,
-        leave_dirs_open = true
       }
     },
   }
